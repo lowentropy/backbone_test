@@ -42,7 +42,7 @@ body
   text-align: left
   border-bottom: 1px solid #ccc
   
-  &.done
+  &.done .todo-text
     text-decoration: line-through
   
   &:hover .delete-todo
@@ -51,8 +51,20 @@ body
       background-position: 0 -20px
       cursor: pointer
   
-  .todo-text
-    padding: 10px
+  .position
+    color: #999
+  
+  .todo-text, .position
+    padding: 5px
+  
+  .todo-edit
+    display: none
+  
+  &.editing
+    .todo-text, .finish
+      display: none
+    .todo-edit
+      display: inline
 
 .delete-todo
   float: right

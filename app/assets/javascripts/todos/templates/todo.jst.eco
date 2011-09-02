@@ -1,4 +1,7 @@
-<div class="todo-item <%= 'done' if @done %>">
-  <input type="checkbox" <%= 'checked="checked"' if @done %>/><span class="todo-text"><%= @text %></span>
+<div class="todo-item <%= 'done' if @done %> <%= 'editing' if @editing %>">
+  <span class="position"><%= @position %>.</span>
+  <input type="checkbox" class="finish" <%= 'checked="checked"' if @done %>/>
+  <span class="todo-text"><%= @text %></span>
+  <input type="text" class="todo-edit" value="<%= @text %>"/>
   <span class="delete-todo"></span>
 </div>

@@ -14,6 +14,8 @@ class App.TodoView extends Backbone.View
   events:
     'click .delete-todo': 'destroy'
     'click input:checkbox': 'toggle'
+    'dblclick .todo-text': 'edit'
+    'keypress .todo-edit': 'change'
   
   # Create a new view, and bind data changes from the model to
   # our rendering functions.
@@ -25,6 +27,17 @@ class App.TodoView extends Backbone.View
   render: ->
     $(@el).html @template(@model)
     this
+  
+  # Enter edit mode
+  edit: ->
+    @model.set editing: true
+    @$('.todo-edit').focus()
+  
+  # Leave edit mode
+  change: (e) ->
+    return unless e.keyCode == 13
+    text = @$('.todo-edit').val()
+    @model.save text: text, editing: false
   
   # Remove the todo item view from the list
   remove: ->
