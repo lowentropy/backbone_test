@@ -1,0 +1,11 @@
+<% if @remaining || @done: %>
+  <p class="count">
+    <span class="remaining"><%= @remaining %></span>
+    <%= if @remaining == 1 then 'task' else 'tasks' %>
+    left to do.
+  </p>
+
+  <% if @done > 0: %>
+    <a href='#' class="clear_tasks">Clear <%= @done %> finished tasks</a>
+  <% end %>
+<% end %>

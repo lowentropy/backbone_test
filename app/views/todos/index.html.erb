@@ -1,0 +1,13 @@
+<div id="todos">
+  <h1>Get stuff done</h1>
+  <input id="new-todo" type="text" placeholder="describe a task" />
+  <ul id="todo-list"></ul>
+  <div id="todo-stats"></div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    window.router = new App.TodosRouter(<%= todos.to_json.html_safe -%>);
+    Backbone.history.start({pushState: true});
+  });
+</script>

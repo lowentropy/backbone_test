@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/chriseppstein/compass.git
+  revision: 7147147e24121ffb03044c638a6a8b02b8fccb7f
+  branch: rails31
+  specs:
+    compass (0.12.0.alpha.0.7147147)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -30,9 +40,11 @@ GEM
       activesupport (= 3.1.0.rc5)
     activesupport (3.1.0.rc5)
       multi_json (~> 1.0)
+    acts_as_list (0.1.4)
     arel (2.1.4)
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
+    chunky_png (1.2.1)
     coffee-rails (3.1.0.rc.6)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0.rc1)
@@ -40,9 +52,17 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.2)
+    decent_exposure (1.0.1)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
+    ejs (1.0.0)
     erubis (2.7.0)
     execjs (1.2.4)
       multi_json (~> 1.0)
+    fssm (0.2.7)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.13)
@@ -72,6 +92,10 @@ GEM
       activesupport (= 3.1.0.rc5)
       bundler (~> 1.0)
       railties (= 3.1.0.rc5)
+    rails-backbone (0.5.3)
+      coffee-script (~> 2.2.0)
+      ejs (~> 1.0.0)
+      rails (~> 3.1.0.rc5)
     railties (3.1.0.rc5)
       actionpack (= 3.1.0.rc5)
       activesupport (= 3.1.0.rc5)
@@ -106,9 +130,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   coffee-rails (~> 3.1.0.rc)
+  compass!
+  decent_exposure
+  eco
   jquery-rails
   rails (= 3.1.0.rc5)
+  rails-backbone
   sass-rails (~> 3.1.0.rc)
   sqlite3
   uglifier

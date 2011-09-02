@@ -1,0 +1,89 @@
+@import compass/css3/box-shadow
+@import compass/typography/links/link-colors
+
+$todos-outer-width: 480px
+$todos-inner-width: 400px
+$todos-gutter: ($todos-outer-width - $todos-inner-width) / 2
+$todos-padding: 20px
+$todos-item-padding: 10px
+
+body
+  background: #eee
+
+#todos
+  background: white
+  width: $todos-outer-width
+  margin: 60px auto
+  padding: $todos-padding
+  text-align: center
+  +single-box-shadow(#aaa)
+  
+  h1
+    font-size: 200%
+    font-family: arial
+    font-weight: bold
+    margin: $todos-padding
+  
+#new-todo
+  font-size: 150%
+  padding: 6px
+  width: $todos-inner-width
+  margin: $todos-padding auto
+  
+  &::-webkit-input-placeholder
+    font-style: italic
+
+.todo-item
+  width: $todos-inner-width
+  margin: 0 auto
+  padding: $todos-item-padding
+  font-size: 150%
+  font-family: arial
+  text-align: left
+  border-bottom: 1px solid #ccc
+  
+  &.done
+    text-decoration: line-through
+  
+  &:hover .delete-todo
+    display: block
+    &:hover
+      background-position: 0 -20px
+      cursor: pointer
+  
+  .todo-text
+    padding: 10px
+
+.delete-todo
+  float: right
+  margin-right: 5px
+  width: 20px
+  height: 20px
+  background-image: url(/assets/destroy.png)
+  display: none
+
+#todo-stats
+  margin: 15px
+  padding-left: 20px
+  color: #777
+  text-align: left
+  width: $todos-inner-width
+  
+  .count
+    float: left
+  
+  .remaining
+    font-weight: bold
+  
+  .clear_tasks
+    float: right
+    padding-right: 20px
+    +link-colors(#777)
+
+  &:after
+    content: "\0020"
+    display: block
+    height: 0
+    clear: both
+    overflow: hidden
+    visibility: hidden
